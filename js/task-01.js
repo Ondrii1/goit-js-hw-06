@@ -5,7 +5,13 @@ console.log(`Number of categories: ${categoryItems.length}`);
 
 categoryItems.forEach((category) => {
   const categoryName = category.querySelector("h2").textContent;
-  const categoryElements = category.querySelectorAll("ul li");
+  const firstCategoryElement = category.firstElementChild.querySelector("ul li");
+  const lastCategoryElement = category.lastElementChild.querySelector("ul li");
+  
+  const firstCategoryElementText = firstCategoryElement ? firstCategoryElement.textContent : "No elements";
+  const lastCategoryElementText = lastCategoryElement ? lastCategoryElement.textContent : "No elements";
+  
   console.log(`Category: ${categoryName}`);
-  console.log(`Elements: ${categoryElements.length}`);
+  console.log(`First Element: ${firstCategoryElementText}`);
+  console.log(`Last Element: ${lastCategoryElementText}`);
 });
